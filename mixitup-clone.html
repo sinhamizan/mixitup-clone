@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mixitup Clone</title>
+</head>
+<body>
+
+
+<style>
+.all-portf {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .portf img {
+    width: 100%;
+  }
+  .portf-btns .active {
+    color: red;
+  }
+
+</style>
+
+
+<section class="portf-area">
+  <div class="portf-btns">
+    <button class="all active">all</button>
+    <button class="design">design</button>
+    <button class="dev">dev</button>
+    <button class="seo">seo</button>
+  </div>
+  <div class="all-portf">
+    <div class="portf all">
+      <img src="imgs/1.jpg" alt="">
+      <div class="portf-inner">
+        <a href="">link</a>
+      </div>
+    </div>
+
+    <div class="portf all">
+      <img src="imgs/1.jpg" alt="">
+      <div class="portf-inner">
+        <a href="">link2</a>
+      </div>
+    </div>
+
+    <div class="portf all dev">
+      <img src="imgs/1.jpg" alt="">
+      <div class="portf-inner">
+        <a href="">link3</a>
+      </div>
+    </div>
+
+    <div class="portf all seo">
+      <img src="imgs/1.jpg" alt="">
+      <div class="portf-inner">
+        <a href="">link4</a>
+      </div>
+    </div>
+
+    <div class="portf all design">
+      <img src="imgs/1.jpg" alt="">
+      <div class="portf-inner">
+        <a href="">link5</a>
+      </div>
+    </div>
+
+    <div class="portf all seo">
+      <img src="imgs/1.jpg" alt="">
+      <div class="portf-inner">
+        <a href="">link6</a>
+      </div>
+    </div>
+
+    <div class="portf all dev">
+      <img src="imgs/1.jpg" alt="">
+      <div class="portf-inner">
+        <a href="">link7</a>
+      </div>
+    </div>
+
+    <div class="portf all design dev">
+      <img src="imgs/1.jpg" alt="">
+      <div class="portf-inner">
+        <a href="">link8</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  var portf_btns = document.querySelectorAll(".portf-btns button");
+  var portf_all = document.querySelectorAll(".all-portf .portf");
+  
+  for( var i=0; i<portf_btns.length; i++ ) {
+    portf_btns[i].addEventListener("click", function(){
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+      var current2 = document.getElementsByClassName("active")[0].innerHTML;
+
+      for( var j=0; j<portf_all.length; j++ ) {
+        portf_all[j].style.display = "none";
+        if( portf_all[j].classList.contains(current2) ) {
+          portf_all[j].style.display = "block";
+        }
+      } 
+    });
+  }
+</script>
+
+</body>
+</html>
